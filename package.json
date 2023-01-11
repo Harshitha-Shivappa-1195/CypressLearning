@@ -4,7 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cypress open"
+    "pretest": "rimraf -r ./cypress/report/*.json",
+    "test": "npm run cypress-test || npm run posttest",
+    "cypress-test": "cypress run",
+    "posttest": "npm run merge-reports && npm run generate-htmlreport",
+    "merge-reports": "mochawesome-merge ./cypress/report/*.json > ./report1.json",
+    "generate-htmlreport": "marge ./report1.json --reportDir ./cypress/report"
   },
   "author": "",
   "license": "ISC",
@@ -13,6 +18,10 @@
     "cypress-file-upload": "^5.0.8"
   },
   "dependencies": {
-    "cypress-downloadfile": "^1.2.3"
+    "cypress-downloadfile": "^1.2.3",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.2.2",
+    "mochawesome-report-generator": "^6.2.0",
+    "rimraf": "^3.0.2"
   }
 }

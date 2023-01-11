@@ -1,0 +1,130 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 1,
+    "pending": 0,
+    "failures": 1,
+    "start": "2023-01-10T16:38:08.464Z",
+    "end": "2023-01-10T16:38:28.091Z",
+    "duration": 19627,
+    "testsRegistered": 2,
+    "passPercent": 50,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "53fd8ea6-f296-435f-8cdd-684256105f56",
+      "title": "",
+      "fullFile": "cypress\\e2e\\pomdemo.cy.js",
+      "file": "cypress\\e2e\\pomdemo.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "7639c95b-0e58-40e4-ac94-e635d7dd0f0b",
+          "title": "All login tests",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login with valid credentails",
+              "fullTitle": "All login tests Login with valid credentails",
+              "timedOut": null,
+              "duration": 7152,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "loginPage.login('Admin', 'admin123');",
+              "err": {},
+              "uuid": "b75a1527-3d70-4d4f-8c6a-8864a020ea44",
+              "parentUUID": "7639c95b-0e58-40e4-ac94-e635d7dd0f0b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login with invalid username",
+              "fullTitle": "All login tests Login with invalid username",
+              "timedOut": null,
+              "duration": 9250,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "loginPage.login('Admin123', 'admin123');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'My Info' but never did.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'My Info' but never did.\n    at LoginPage.login (webpack:///./cypress/e2e/pages/login_page.js:15:11)\n    at Context.eval (webpack:///./cypress/e2e/pomdemo.cy.js:37:18)",
+                "diff": null
+              },
+              "uuid": "b840f428-657d-4ceb-8fb2-fd074b9a8995",
+              "parentUUID": "7639c95b-0e58-40e4-ac94-e635d7dd0f0b",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "b75a1527-3d70-4d4f-8c6a-8864a020ea44"
+          ],
+          "failures": [
+            "b840f428-657d-4ceb-8fb2-fd074b9a8995"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 16402,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/report"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-01-10T16:37:46.020Z",
+    "end": "2023-01-10T16:37:58.280Z",
+    "duration": 12260,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "fea3eba0-2ae7-4552-8b37-9f6907fcc91f",
+      "title": "",
+      "fullFile": "cypress\\e2e\\loginmodule.cy.js",
+      "file": "cypress\\e2e\\loginmodule.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "3c4b989a-2cac-4cc3-8cc8-22556f12e91e",
+          "title": "All login tests",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login with valid username",
+              "fullTitle": "All login tests Login with valid username",
+              "timedOut": null,
+              "duration": 7746,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('credentials.json').then(data => {\n  loginPage.login(data.name, data.password);\n});",
+              "err": {},
+              "uuid": "245bed8c-0612-42a8-bc5c-fe985f04c0e8",
+              "parentUUID": "3c4b989a-2cac-4cc3-8cc8-22556f12e91e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "245bed8c-0612-42a8-bc5c-fe985f04c0e8"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 7746,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/report"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
