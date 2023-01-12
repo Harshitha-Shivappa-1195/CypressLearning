@@ -2,7 +2,7 @@
 
 describe('Fill all the details', () => {
 
-    it('Complete registration', () => {
+    it.skip('Dropdown, Checkbox, Radio Button', () => {
 
      //   cy.viewport(1920, 1080)
         cy.visit("http://seleniumpractise.blogspot.com/2022/02/sample-registration-form.html")
@@ -42,5 +42,18 @@ describe('Fill all the details', () => {
         //cy.get("input[type='radio']").check({force:true})
 
         cy.get("input[type='radio']").check("N").should("be.checked")
+    })
+
+    it("Dropdown without select", () => {
+
+        cy.visit("https://www.dummyticket.com/dummy-ticket-for-visa-application/")
+
+        cy.get("#select2-billing_country-container").click()
+
+        cy.get(".select2-search__field").type("Italy").type("{enter}")
+
+        cy.get("#select2-billing_country-container").should('have.text', 'Italy')
+
+
     })
 })
