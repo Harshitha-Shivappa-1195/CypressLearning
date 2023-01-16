@@ -9,7 +9,7 @@ describe("Handle Auto Suggestion", () => {
 
         cy.get("div[role='option']").each(function($ele, index, $list) {
             
-            if($ele.text().includes("cypress automation example")) {
+            if($ele.text().includes("cypress automation tool")) {
                 cy.wrap($ele).click()
             }
             else {

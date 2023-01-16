@@ -1,15 +1,15 @@
 {
   "stats": {
     "suites": 1,
-    "tests": 2,
+    "tests": 1,
     "passes": 1,
     "pending": 0,
-    "failures": 1,
-    "start": "2023-01-10T16:38:08.464Z",
-    "end": "2023-01-10T16:38:28.091Z",
-    "duration": 19627,
-    "testsRegistered": 2,
-    "passPercent": 50,
+    "failures": 0,
+    "start": "2023-01-16T06:04:21.928Z",
+    "end": "2023-01-16T06:04:36.409Z",
+    "duration": 14481,
+    "testsRegistered": 1,
+    "passPercent": 100,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
@@ -18,16 +18,16 @@
   },
   "results": [
     {
-      "uuid": "53fd8ea6-f296-435f-8cdd-684256105f56",
+      "uuid": "00d33eec-f91a-4eba-a79a-2cc5276341a5",
       "title": "",
-      "fullFile": "cypress\\e2e\\pomdemo.cy.js",
-      "file": "cypress\\e2e\\pomdemo.cy.js",
+      "fullFile": "cypress\\e2e\\loginmodule.cy.js",
+      "file": "cypress\\e2e\\loginmodule.cy.js",
       "beforeHooks": [],
       "afterHooks": [],
       "tests": [],
       "suites": [
         {
-          "uuid": "7639c95b-0e58-40e4-ac94-e635d7dd0f0b",
+          "uuid": "6c1c6e9a-c62c-4216-b702-90474e143c90",
           "title": "All login tests",
           "fullFile": "",
           "file": "",
@@ -35,56 +35,32 @@
           "afterHooks": [],
           "tests": [
             {
-              "title": "Login with valid credentails",
-              "fullTitle": "All login tests Login with valid credentails",
+              "title": "Login with valid username",
+              "fullTitle": "All login tests Login with valid username",
               "timedOut": null,
-              "duration": 7152,
+              "duration": 9074,
               "state": "passed",
               "speed": "medium",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
-              "code": "loginPage.login('Admin', 'admin123');",
+              "code": "cy.fixture('credentials.json').then(data => {\n  loginPage.login(data.name, data.password);\n});",
               "err": {},
-              "uuid": "b75a1527-3d70-4d4f-8c6a-8864a020ea44",
-              "parentUUID": "7639c95b-0e58-40e4-ac94-e635d7dd0f0b",
-              "isHook": false,
-              "skipped": false
-            },
-            {
-              "title": "Login with invalid username",
-              "fullTitle": "All login tests Login with invalid username",
-              "timedOut": null,
-              "duration": 9250,
-              "state": "failed",
-              "speed": null,
-              "pass": false,
-              "fail": true,
-              "pending": false,
-              "context": null,
-              "code": "loginPage.login('Admin123', 'admin123');",
-              "err": {
-                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'My Info' but never did.",
-                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'My Info' but never did.\n    at LoginPage.login (webpack:///./cypress/e2e/pages/login_page.js:15:11)\n    at Context.eval (webpack:///./cypress/e2e/pomdemo.cy.js:37:18)",
-                "diff": null
-              },
-              "uuid": "b840f428-657d-4ceb-8fb2-fd074b9a8995",
-              "parentUUID": "7639c95b-0e58-40e4-ac94-e635d7dd0f0b",
+              "uuid": "679f2521-35a4-45a9-8336-0c204c33ec64",
+              "parentUUID": "6c1c6e9a-c62c-4216-b702-90474e143c90",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "b75a1527-3d70-4d4f-8c6a-8864a020ea44"
+            "679f2521-35a4-45a9-8336-0c204c33ec64"
           ],
-          "failures": [
-            "b840f428-657d-4ceb-8fb2-fd074b9a8995"
-          ],
+          "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 16402,
+          "duration": 9074,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

@@ -5,9 +5,9 @@
     "passes": 2,
     "pending": 0,
     "failures": 0,
-    "start": "2023-01-10T16:37:33.096Z",
-    "end": "2023-01-10T16:37:39.156Z",
-    "duration": 6060,
+    "start": "2023-01-16T06:03:56.046Z",
+    "end": "2023-01-16T06:04:00.725Z",
+    "duration": 4679,
     "testsRegistered": 2,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "48048959-6425-448e-8897-61de1ced9143",
+      "uuid": "4d3cf40b-c1b7-49a5-b6e4-4e36461eed26",
       "title": "",
       "fullFile": "cypress\\e2e\\filedownloadupload.cy.js",
       "file": "cypress\\e2e\\filedownloadupload.cy.js",
@@ -29,7 +29,7 @@
           "title": "File Upload Test",
           "fullTitle": "File Upload Test",
           "timedOut": null,
-          "duration": 1508,
+          "duration": 584,
           "state": "passed",
           "speed": "fast",
           "pass": true,
@@ -38,8 +38,8 @@
           "context": null,
           "code": "cy.visit('https://trytestingthis.netlify.app/');\ncy.get('#myfile').attachFile('example.json');",
           "err": {},
-          "uuid": "b24d5d40-c218-46c8-aad7-c779027713fd",
-          "parentUUID": "48048959-6425-448e-8897-61de1ced9143",
+          "uuid": "73068ef0-6760-44d2-911c-5147dd31da7e",
+          "parentUUID": "4d3cf40b-c1b7-49a5-b6e4-4e36461eed26",
           "isHook": false,
           "skipped": false
         },
@@ -47,7 +47,7 @@
           "title": "File Download Test",
           "fullTitle": "File Download Test",
           "timedOut": null,
-          "duration": 645,
+          "duration": 532,
           "state": "passed",
           "speed": "fast",
           "pass": true,
@@ -56,21 +56,21 @@
           "context": null,
           "code": "cy.downloadFile('https://upload.wikimedia.org/wikipedia/en/a/a9/Example.jpg', 'mydownloads', 'example.jpg');",
           "err": {},
-          "uuid": "c0ae4465-e3b8-4572-ae0b-3331164dc5ef",
-          "parentUUID": "48048959-6425-448e-8897-61de1ced9143",
+          "uuid": "8d577e31-6cc0-4ab2-856c-b63f3604bea7",
+          "parentUUID": "4d3cf40b-c1b7-49a5-b6e4-4e36461eed26",
           "isHook": false,
           "skipped": false
         }
       ],
       "suites": [],
       "passes": [
-        "b24d5d40-c218-46c8-aad7-c779027713fd",
-        "c0ae4465-e3b8-4572-ae0b-3331164dc5ef"
+        "73068ef0-6760-44d2-911c-5147dd31da7e",
+        "8d577e31-6cc0-4ab2-856c-b63f3604bea7"
       ],
       "failures": [],
       "pending": [],
       "skipped": [],
-      "duration": 2153,
+      "duration": 1116,
       "root": true,
       "rootEmpty": false,
       "_timeout": 2000
