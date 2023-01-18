@@ -1,0 +1,110 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2023-01-18T13:48:15.923Z",
+    "end": "2023-01-18T13:48:27.033Z",
+    "duration": 11110,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "419e6769-4a24-4ec7-a5d8-b9c267d4198c",
+      "title": "",
+      "fullFile": "cypress\\e2e\\CaptureScreenShotsAndVideos.cy.js",
+      "file": "cypress\\e2e\\CaptureScreenShotsAndVideos.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "70dd2454-6354-4f26-ba27-10cb28db55dd",
+          "title": "Capture Screenshots and Videos",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Manually and Automatically",
+              "fullTitle": "Capture Screenshots and Videos Manually and Automatically",
+              "timedOut": null,
+              "duration": 7065,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"https://demo.opencart.com/\");\n// cy.screenshot(\"homepage\")\n// cy.wait(5000)\n// cy.get(\":nth-child(1) > form > .product-thumb > .image > a > .img-fluid\").screenshot(\"image\")\n//Automatically capture screenshot and video on failure\ncy.get(\"li:nth-child(7) a:nth-child(1)\").click();\ncy.get(\"div[id='content'] h2\").should('have.text', \"Tablets\");",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected '<h2>' to have text 'Tablets', but the text was 'Cameras'",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected '<h2>' to have text 'Tablets', but the text was 'Cameras'\n    at Context.eval (webpack:///./cypress/e2e/CaptureScreenShotsAndVideos.cy.js:15:39)",
+                "diff": "- 'Cameras'\n+ 'Tablets'\n"
+              },
+              "uuid": "085e7e55-1278-4cf4-8c96-d9a003ca57a2",
+              "parentUUID": "70dd2454-6354-4f26-ba27-10cb28db55dd",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "085e7e55-1278-4cf4-8c96-d9a003ca57a2"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 7065,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/report"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

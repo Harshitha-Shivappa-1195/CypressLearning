@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-01-18T13:53:31.676Z",
+    "end": "2023-01-18T13:53:54.550Z",
+    "duration": 22874,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "6e797250-408b-43e4-a734-a9355980baf6",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Table.cy.js",
+      "file": "cypress\\e2e\\Table.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "64032546-ebfa-497c-929f-f8552b4b1c2d",
+          "title": "Handle Tables",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Pagination",
+              "fullTitle": "Handle Tables Pagination",
+              "timedOut": null,
+              "duration": 18267,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//Total Number of pages\n// let totalPages\n// cy.get(\".col-sm-6.text-end\").then( (e) => {\n//     let paginationValue = e.text()\n//     totalPages = paginationValue.substring(paginationValue.indexOf(\"(\") +1, paginationValue.indexOf(\"Pages\")-1)\n//     cy.log(\"Total number of pages \" +totalPages)\n// })\nlet totalPages = 5;\nfor (let p = 1; p <= totalPages; p++) {\n  if (totalPages > 1) {\n    cy.log(\"Active page is \" + p);\n    cy.get(\"ul[class='pagination']>li>a\").each(($el, index, $list) => {\n      if ($el.text() == p) {\n        cy.wrap($el).click();\n        cy.wait(1000);\n      }\n    });\n    cy.get(\"table[class='table table-bordered table-hover']>tbody>tr\").each(($row, index, $rows) => {\n      cy.wrap($row).within(() => {\n        cy.get('td:nth-child(3)').then(e => {\n          cy.log(e.text());\n        });\n      });\n    });\n  }\n}",
+              "err": {},
+              "uuid": "59364dc4-129c-44ec-8cbb-8d6ea2ad258d",
+              "parentUUID": "64032546-ebfa-497c-929f-f8552b4b1c2d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "59364dc4-129c-44ec-8cbb-8d6ea2ad258d"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 18267,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/report"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

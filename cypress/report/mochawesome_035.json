@@ -1,0 +1,125 @@
+{
+  "stats": {
+    "suites": 0,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-01-18T13:52:30.740Z",
+    "end": "2023-01-18T13:52:31.211Z",
+    "duration": 471,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "8f237c29-f207-44cf-990b-ddf653e16d2b",
+      "title": "",
+      "fullFile": "cypress\\e2e\\readwritefile.cy.js",
+      "file": "cypress\\e2e\\readwritefile.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [
+        {
+          "title": "Read files using fixture",
+          "fullTitle": "Read files using fixture",
+          "timedOut": null,
+          "duration": 209,
+          "state": "passed",
+          "speed": "fast",
+          "pass": true,
+          "fail": false,
+          "pending": false,
+          "context": null,
+          "code": "cy.fixture('example.json').then(data => {\n  cy.log(data.name);\n  cy.log(data.email);\n});\n//cy.fixture('example').its('name').should('eq', 'harshitha')\ncy.log(this.test_data.name);",
+          "err": {},
+          "uuid": "147805e8-506b-40b3-83d2-432c4cb600ab",
+          "parentUUID": "8f237c29-f207-44cf-990b-ddf653e16d2b",
+          "isHook": false,
+          "skipped": false
+        },
+        {
+          "title": "Read file using readFile()",
+          "fullTitle": "Read file using readFile()",
+          "timedOut": null,
+          "duration": 117,
+          "state": "passed",
+          "speed": "fast",
+          "pass": true,
+          "fail": false,
+          "pending": false,
+          "context": null,
+          "code": "cy.readFile('./cypress/fixtures/example.json').then(data => {\n  cy.log(data.name);\n});\ncy.readFile('./cypress/fixtures/example.json').its('name').should('eq', 'harshitha');",
+          "err": {},
+          "uuid": "e56acc05-9e4f-49c4-a848-738537229024",
+          "parentUUID": "8f237c29-f207-44cf-990b-ddf653e16d2b",
+          "isHook": false,
+          "skipped": false
+        },
+        {
+          "title": "Write file demo",
+          "fullTitle": "Write file demo",
+          "timedOut": null,
+          "duration": 89,
+          "state": "passed",
+          "speed": "fast",
+          "pass": true,
+          "fail": false,
+          "pending": false,
+          "context": null,
+          "code": "cy.writeFile('./cypress/fixtures/sample.txt', 'Hello, let us learn cypress\\n');\ncy.writeFile('./cypress/fixtures/sample.txt', 'Welcome to learnings', {\n  flag: 'a+'\n});",
+          "err": {},
+          "uuid": "076a5cdc-be19-4cc1-962e-ee33ab94f53b",
+          "parentUUID": "8f237c29-f207-44cf-990b-ddf653e16d2b",
+          "isHook": false,
+          "skipped": false
+        }
+      ],
+      "suites": [],
+      "passes": [
+        "147805e8-506b-40b3-83d2-432c4cb600ab",
+        "e56acc05-9e4f-49c4-a848-738537229024",
+        "076a5cdc-be19-4cc1-962e-ee33ab94f53b"
+      ],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 415,
+      "root": true,
+      "rootEmpty": false,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/report"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

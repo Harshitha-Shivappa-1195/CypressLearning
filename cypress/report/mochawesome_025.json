@@ -1,0 +1,110 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2023-01-18T13:48:53.822Z",
+    "end": "2023-01-18T13:49:12.360Z",
+    "duration": 18538,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "61523de0-9121-4b38-adae-fd9ab55683bb",
+      "title": "",
+      "fullFile": "cypress\\e2e\\DataDrivenTest.cy.js",
+      "file": "cypress\\e2e\\DataDrivenTest.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "0d5a8963-451c-4134-85dc-1b022ef5c3b0",
+          "title": "My Test Suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "DataDrivenTest",
+              "fullTitle": "My Test Suite DataDrivenTest",
+              "timedOut": null,
+              "duration": 13854,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture(\"orangehrm\").then(data => {\n  cy.visit(\"https://opensource-demo.orangehrmlive.com/web/index.php/auth/login\");\n  data.forEach(userdata => {\n    cy.get(\"input[placeholder='Username']\").type(userdata.name);\n    cy.get(\"input[placeholder='Password']\").type(userdata.password);\n    cy.get(\"button[type='submit']\").click();\n    if (userdata.name == 'Admin' && userdata.password == 'admin123') {\n      cy.get(\".oxd-topbar-header-breadcrumb > .oxd-text\").should('have.text', userdata.expected);\n      cy.get(\".oxd-userdropdown-tab > .oxd-icon\").click();\n      cy.contains('Logout').click();\n    } else {\n      cy.get(\".oxd-alert-content > .oxd-text\").should(\"have.text\", userdata.expected);\n    }\n  });\n});",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `input[placeholder='Username']`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `input[placeholder='Username']`, but never found it.\n    at eval (webpack:///./cypress/e2e/DataDrivenTest.cy.js:11:19)\n    at Context.eval (webpack:///./cypress/e2e/DataDrivenTest.cy.js:10:17)",
+                "diff": null
+              },
+              "uuid": "5b38a8f4-e2ac-43e5-bdb9-cf139a1c9776",
+              "parentUUID": "0d5a8963-451c-4134-85dc-1b022ef5c3b0",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "5b38a8f4-e2ac-43e5-bdb9-cf139a1c9776"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 13854,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/report"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

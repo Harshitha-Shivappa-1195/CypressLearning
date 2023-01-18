@@ -1,15 +1,15 @@
 {
   "stats": {
     "suites": 1,
-    "tests": 2,
-    "passes": 1,
+    "tests": 1,
+    "passes": 0,
     "pending": 0,
     "failures": 1,
-    "start": "2023-01-16T06:04:45.230Z",
-    "end": "2023-01-16T06:05:07.254Z",
-    "duration": 22024,
-    "testsRegistered": 2,
-    "passPercent": 50,
+    "start": "2023-01-18T13:35:37.229Z",
+    "end": "2023-01-18T13:35:49.858Z",
+    "duration": 12629,
+    "testsRegistered": 1,
+    "passPercent": 0,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
@@ -18,73 +18,53 @@
   },
   "results": [
     {
-      "uuid": "c488c26b-d844-41da-87db-9acdb5f9b77e",
+      "uuid": "50d25a1e-db3b-4781-aeaa-7d32ae495ac1",
       "title": "",
-      "fullFile": "cypress\\e2e\\pomdemo.cy.js",
-      "file": "cypress\\e2e\\pomdemo.cy.js",
+      "fullFile": "cypress\\e2e\\DataDrivenTest.cy.js",
+      "file": "cypress\\e2e\\DataDrivenTest.cy.js",
       "beforeHooks": [],
       "afterHooks": [],
       "tests": [],
       "suites": [
         {
-          "uuid": "69554ef7-3b99-4296-99ae-3624c7871f40",
-          "title": "All login tests",
+          "uuid": "f976c4bc-d674-4230-9022-0c7fd978eb09",
+          "title": "My Test Suite",
           "fullFile": "",
           "file": "",
           "beforeHooks": [],
           "afterHooks": [],
           "tests": [
             {
-              "title": "Login with valid credentails",
-              "fullTitle": "All login tests Login with valid credentails",
+              "title": "DataDrivenTest",
+              "fullTitle": "My Test Suite DataDrivenTest",
               "timedOut": null,
-              "duration": 9936,
-              "state": "passed",
-              "speed": "medium",
-              "pass": true,
-              "fail": false,
-              "pending": false,
-              "context": null,
-              "code": "loginPage.login('Admin', 'admin123');",
-              "err": {},
-              "uuid": "65788c77-844e-490a-8064-bb98a2d53608",
-              "parentUUID": "69554ef7-3b99-4296-99ae-3624c7871f40",
-              "isHook": false,
-              "skipped": false
-            },
-            {
-              "title": "Login with invalid username",
-              "fullTitle": "All login tests Login with invalid username",
-              "timedOut": null,
-              "duration": 8403,
+              "duration": 7625,
               "state": "failed",
               "speed": null,
               "pass": false,
               "fail": true,
               "pending": false,
               "context": null,
-              "code": "loginPage.login('Admin123', 'admin123');",
+              "code": "cy.fixture(\"orangehrm\").then(data => {\n  cy.visit(\"https://opensource-demo.orangehrmlive.com/web/index.php/auth/login\");\n  data.forEach(userdata => {\n    cy.get(\"input[placeholder='Username']\").type(userdata.name);\n    cy.get(\"input[placeholder='Password']\").type(userdata.password);\n    cy.get(\"button[type='submit']\").click();\n    if (userdata.name == 'Admin' && userdata.password == 'admin123') {\n      cy.get(\".oxd-topbar-header-breadcrumb > .oxd-text\").should('have.text', userdata.expected);\n      cy.get(\".oxd-userdropdown-tab > .oxd-icon\").click();\n      cy.contains('Logout').click();\n    } else {\n      cy.get(\".oxd-alert-content > .oxd-text\").should(\"have.text\", userdata.expected);\n    }\n  });\n});",
               "err": {
-                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'My Info' but never did.",
-                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'My Info' but never did.\n    at LoginPage.login (webpack:///./cypress/e2e/pages/login_page.js:15:11)\n    at Context.eval (webpack:///./cypress/e2e/pomdemo.cy.js:37:18)",
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `input[placeholder='Username']`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `input[placeholder='Username']`, but never found it.\n    at eval (webpack:///./cypress/e2e/DataDrivenTest.cy.js:11:19)\n    at Context.eval (webpack:///./cypress/e2e/DataDrivenTest.cy.js:10:17)",
                 "diff": null
               },
-              "uuid": "cdfb1c4d-2f7a-4641-922f-28b4e3f5110c",
-              "parentUUID": "69554ef7-3b99-4296-99ae-3624c7871f40",
+              "uuid": "df8995fe-f39b-4572-adf8-48628c77caf1",
+              "parentUUID": "f976c4bc-d674-4230-9022-0c7fd978eb09",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
-          "passes": [
-            "65788c77-844e-490a-8064-bb98a2d53608"
-          ],
+          "passes": [],
           "failures": [
-            "cdfb1c4d-2f7a-4641-922f-28b4e3f5110c"
+            "df8995fe-f39b-4572-adf8-48628c77caf1"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 18339,
+          "duration": 7625,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-01-18T14:01:17.927Z",
+    "end": "2023-01-18T14:01:35.432Z",
+    "duration": 17505,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "4830c92c-1563-47c4-b22a-db920f13d861",
+      "title": "",
+      "fullFile": "cypress\\e2e\\HandleAutoSuggestion.cy.js",
+      "file": "cypress\\e2e\\HandleAutoSuggestion.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "415caffe-9524-4932-ab92-90c3e89cddd9",
+          "title": "Handle Auto Suggestion",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Select values from google auto suggestion",
+              "fullTitle": "Handle Auto Suggestion Select values from google auto suggestion",
+              "timedOut": null,
+              "duration": 12532,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"https://www.google.com/\");\ncy.get(\"input[name='q']\").type(\"cypress automation\");\ncy.get(\"div[role='option']\").each(function ($ele, index, $list) {\n  if ($ele.text().includes(\"cypress automation tool\")) {\n    cy.wrap($ele).click();\n  } else {\n    cy.log($ele.text());\n  }\n});",
+              "err": {},
+              "uuid": "3f259102-200d-4e6d-ba5d-de95472f9e46",
+              "parentUUID": "415caffe-9524-4932-ab92-90c3e89cddd9",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "3f259102-200d-4e6d-ba5d-de95472f9e46"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 12532,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/report"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

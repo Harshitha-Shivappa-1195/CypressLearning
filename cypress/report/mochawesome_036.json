@@ -1,0 +1,126 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 1,
+    "failures": -1,
+    "start": "2023-01-18T13:52:37.971Z",
+    "end": "2023-01-18T13:53:01.024Z",
+    "duration": 23053,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 50,
+    "other": 1,
+    "hasOther": true,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "c5754052-5e0d-4652-b409-4c93083989e0",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Registration.cy.js",
+      "file": "cypress\\e2e\\Registration.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "48fd3de9-da4e-4f37-a975-bacf042af0ae",
+          "title": "Fill all the details",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Dropdown, Checkbox, Radio Button",
+              "fullTitle": "Fill all the details Dropdown, Checkbox, Radio Button",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "//   cy.viewport(1920, 1080)\ncy.visit(\"http://seleniumpractise.blogspot.com/2022/02/sample-registration-form.html\");\ncy.get(\"#fname\").type(\"Cypress\");\n//Selection based on text\n//cy.get(\"[name='city']\").select(\"Chennai\").find(\":selected\").contains(\"Chennai\")\n//assertion fails here due to wrong select assertion\n//cy.get(\"[name='city']\").select(\"Chennai\").find(\":selected\").contains(\"Bangalore\")\n//Selection based on value\n//cy.get(\"[name='city']\").select(\"Chen\").find(\":selected\").contains(\"Chennai\")\n//Selection based on index\ncy.get(\"[name='city']\").select(3).find(\":selected\").contains(\"Indore\");\n//multi select dropdown\n//cy.get(\"[name='Hobbies']\").select(\"Dance\", \"Singing\")\n//checks all the checkbox options\n//cy.get(\"input[type='checkbox']\").check()\n//to check all the checkbox options even if the checkbox is disabled\n//cy.get(\"input[type='checkbox']\").check({force: true})\n//selects the first checkbox and performs assertion (checked or not)\n//cy.get(\"input[type='checkbox']\").first().check().should(\"be.checked\")\n//checked based on value\n//cy.get(\"input[type='checkbox']\").check(\"new\").should(\"be.checked\")\n//check disabled checkbox based on value and perform assertion\n//cy.get(\"input[type='checkbox']\").check(\"dis\", {force: true}).should(\"be.checked\")\n//cy.get(\"input[type='radio']\").check({force:true})\ncy.get(\"input[type='radio']\").check(\"N\").should(\"be.checked\");",
+              "err": {},
+              "uuid": "8aaa46d1-081e-48c2-9995-5e2c5bd16a09",
+              "parentUUID": "48fd3de9-da4e-4f37-a975-bacf042af0ae",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Dropdown without select",
+              "fullTitle": "Fill all the details Dropdown without select",
+              "timedOut": null,
+              "duration": 17336,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"https://www.dummyticket.com/dummy-ticket-for-visa-application/\");\ncy.get(\"#select2-billing_country-container\").click();\ncy.get(\".select2-search__field\").type(\"Italy\").type(\"{enter}\");\ncy.get(\"#select2-billing_country-container\").should('have.text', 'Italy');",
+              "err": {},
+              "uuid": "0c9d9206-b952-4b8e-a9a4-23a4d7d0a9e4",
+              "parentUUID": "48fd3de9-da4e-4f37-a975-bacf042af0ae",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "0c9d9206-b952-4b8e-a9a4-23a4d7d0a9e4"
+          ],
+          "failures": [],
+          "pending": [
+            "8aaa46d1-081e-48c2-9995-5e2c5bd16a09"
+          ],
+          "skipped": [],
+          "duration": 17336,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/report"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

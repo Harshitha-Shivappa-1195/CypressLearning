@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-01-18T13:47:47.194Z",
+    "end": "2023-01-18T13:47:55.760Z",
+    "duration": 8566,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "f7739b57-4db3-43c9-84d8-2e0dd63e04c1",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Alerts.cy.js",
+      "file": "cypress\\e2e\\Alerts.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "cff7b2ab-1ace-4e97-9c7f-5cf620b70bd9",
+          "title": "Alerts",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "JS Authenticated Alert",
+              "fullTitle": "Alerts JS Authenticated Alert",
+              "timedOut": null,
+              "duration": 3751,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//Approach one to pass credentials (within visit url in json format)\n// cy.visit('https://the-internet.herokuapp.com/basic_auth', {\n//     auth: {\n//         username: \"admin\",\n//         password: \"admin\"\n//     }\n// })\n// cy.get(\"div[class='example'] p\").should('have.contain', 'Congratulations')\n//Approach two to pass credentails (with url)\ncy.visit('https://admin:admin@the-internet.herokuapp.com/basic_auth');\ncy.get(\"div[class='example'] p\").should('have.contain', 'Congratulations');",
+              "err": {},
+              "uuid": "a0f32ef0-989f-4ed8-8945-1c072d6af4ad",
+              "parentUUID": "cff7b2ab-1ace-4e97-9c7f-5cf620b70bd9",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "a0f32ef0-989f-4ed8-8945-1c072d6af4ad"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3751,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/report"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

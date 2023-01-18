@@ -6,7 +6,7 @@
   "scripts": {
     "pretest": "rimraf -r ./cypress/report/*.json",
     "test": "npm run cypress-test || npm run posttest",
-    "cypress-test": "cypress run",
+    "cypress-test": "cypress run --config pageLoadTimeout=100000",
     "posttest": "npm run merge-reports && npm run generate-htmlreport",
     "merge-reports": "mochawesome-merge ./cypress/report/*.json > ./report1.json",
     "generate-htmlreport": "marge ./report1.json --reportDir ./cypress/report"

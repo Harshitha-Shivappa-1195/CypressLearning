@@ -36,3 +36,31 @@ Cypress.Commands.add('getIframe', (iframe) => {
         .should('be.visible')
         .then(cy.wrap)
 })
+
+//custom command for clicking on link using label
+
+Cypress.Commands.add('clickLink', (label) => {
+    cy.get('a').contains(label, { matchCase: false }).click();
+})
+
+Cypress.Commands.add("loginapp", (email, password) => {
+
+    cy.get('#Email').type(email)
+    cy.get('#Password').type(password, { sensitive: true })
+    cy.get("button[class='button-1 login-button']").click()
+})
+
+Cypress.Commands.overwrite('type', (originalFn, element, text, options) => {
+    if (options && options.sensitive) {
+        // turn off original log
+        options.log = false
+        // create our own log with masked message
+        Cypress.log({
+            $el: element,
+            name: 'type',
+            message: '*'.repeat(text.length),
+        })
+    }
+
+    return originalFn(element, text, options)
+})

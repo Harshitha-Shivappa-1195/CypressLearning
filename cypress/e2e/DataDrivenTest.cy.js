@@ -8,8 +8,8 @@ describe("My Test Suite", () => {
             cy.visit("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login")
 
             data.forEach((userdata) => {
-                cy.get("input[placeholder='Username']").type(userdata.name)
-                cy.get("input[placeholder='Password']").type(userdata.password)
+                cy.get("input[placeholder='username']").type(userdata.name)
+                cy.get("input[placeholder='password']").type(userdata.password)
                 cy.get("button[type='submit']").click()
 
                 if (userdata.name == 'Admin' && userdata.password == 'admin123') {

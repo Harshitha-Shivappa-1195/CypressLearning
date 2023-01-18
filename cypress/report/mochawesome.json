@@ -1,13 +1,13 @@
 {
   "stats": {
-    "suites": 0,
+    "suites": 1,
     "tests": 1,
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2023-01-16T06:03:41.511Z",
-    "end": "2023-01-16T06:03:46.943Z",
-    "duration": 5432,
+    "start": "2023-01-18T13:34:19.325Z",
+    "end": "2023-01-18T13:34:28.961Z",
+    "duration": 9636,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,42 +18,61 @@
   },
   "results": [
     {
-      "uuid": "d6a8e7de-2595-4caa-bebd-3b08033a5209",
+      "uuid": "053205df-04b6-4d1c-964f-64f6d5541984",
       "title": "",
-      "fullFile": "cypress\\e2e\\assertion.cy.js",
-      "file": "cypress\\e2e\\assertion.cy.js",
+      "fullFile": "cypress\\e2e\\Alerts.cy.js",
+      "file": "cypress\\e2e\\Alerts.cy.js",
       "beforeHooks": [],
       "afterHooks": [],
-      "tests": [
+      "tests": [],
+      "suites": [
         {
-          "title": "learning assertions",
-          "fullTitle": "learning assertions",
-          "timedOut": null,
-          "duration": 1996,
-          "state": "passed",
-          "speed": "fast",
-          "pass": true,
-          "fail": false,
-          "pending": false,
-          "context": null,
-          "code": "cy.visit('https://example.cypress.io/');\ncy.contains('get').click();\ncy.get('#query-btn').should('contain', 'Button');\ncy.get('#query-btn').should('contain', 'Button').should('have.class', 'query-btn').should('be.visible').should('be.enabled');\ncy.get('#query-btn').invoke('attr', 'id').should('equal', 'query-btn');\ncy.get('#query-btn').should('contain', 'Button').and('have.class', 'query-btn');\n//added custom wait\n// cy.get('#query-btn', {timeout:6000})\n//     .should('contain', 'SubmitButton')\n//Explicit Assertion\nexpect(true).to.be.true;\nlet name = 'Cypress';\nexpect(name).to.be.equal('Cypress');\nassert.equal(4, 4, 'Not Equal');\nassert.equal(4, '4', 'Not Equal');\n//  assert.strictEqual(4, '4', 'Not Strictly Equal')\n// assert.equal(4, 5, 'Not Equal')",
-          "err": {},
-          "uuid": "c9c27f33-a30f-4612-8c1f-1cb81db15b5a",
-          "parentUUID": "d6a8e7de-2595-4caa-bebd-3b08033a5209",
-          "isHook": false,
-          "skipped": false
+          "uuid": "f902c7b5-b06f-4fb6-a0b9-599f05de6c7a",
+          "title": "Alerts",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "JS Authenticated Alert",
+              "fullTitle": "Alerts JS Authenticated Alert",
+              "timedOut": null,
+              "duration": 3703,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//Approach one to pass credentials (within visit url in json format)\n// cy.visit('https://the-internet.herokuapp.com/basic_auth', {\n//     auth: {\n//         username: \"admin\",\n//         password: \"admin\"\n//     }\n// })\n// cy.get(\"div[class='example'] p\").should('have.contain', 'Congratulations')\n//Approach two to pass credentails (with url)\ncy.visit('https://admin:admin@the-internet.herokuapp.com/basic_auth');\ncy.get(\"div[class='example'] p\").should('have.contain', 'Congratulations');",
+              "err": {},
+              "uuid": "fba32a6f-5b09-4ade-a3b7-d25289302001",
+              "parentUUID": "f902c7b5-b06f-4fb6-a0b9-599f05de6c7a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "fba32a6f-5b09-4ade-a3b7-d25289302001"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3703,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
         }
       ],
-      "suites": [],
-      "passes": [
-        "c9c27f33-a30f-4612-8c1f-1cb81db15b5a"
-      ],
+      "passes": [],
       "failures": [],
       "pending": [],
       "skipped": [],
-      "duration": 1996,
+      "duration": 0,
       "root": true,
-      "rootEmpty": false,
+      "rootEmpty": true,
       "_timeout": 2000
     }
   ],

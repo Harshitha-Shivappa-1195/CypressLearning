@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-01-18T13:51:16.022Z",
+    "end": "2023-01-18T13:51:27.885Z",
+    "duration": 11863,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "0eff1d16-e122-48d2-bc38-653e6927f5c1",
+      "title": "",
+      "fullFile": "cypress\\e2e\\MouseOperations.cy.js",
+      "file": "cypress\\e2e\\MouseOperations.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d413818b-c152-4610-8a53-d8862bb14117",
+          "title": "Mouse Operations",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Scrolling Page",
+              "fullTitle": "Mouse Operations Scrolling Page",
+              "timedOut": null,
+              "duration": 6503,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"https://www.countries-ofthe-world.com/flags-of-the-world.html\");\ncy.get(':nth-child(1) > tbody > :nth-child(86) > :nth-child(2)').scrollIntoView({\n  duration: 2000\n}); //2000 miliseconds\ncy.get(':nth-child(1) > tbody > :nth-child(86) > :nth-child(2)').should('be.visible');\ncy.get(':nth-child(1) > tbody > :nth-child(22) > :nth-child(1) > img').scrollIntoView({\n  duration: 2000\n});\ncy.get(':nth-child(1) > tbody > :nth-child(22) > :nth-child(1) > img').should('be.visible');\ncy.get('#footer').scrollIntoView();",
+              "err": {},
+              "uuid": "27f77813-f086-4079-a786-c183338c9448",
+              "parentUUID": "d413818b-c152-4610-8a53-d8862bb14117",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "27f77813-f086-4079-a786-c183338c9448"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 6503,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/report"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

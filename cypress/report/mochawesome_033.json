@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-01-18T13:51:37.548Z",
+    "end": "2023-01-18T13:51:47.084Z",
+    "duration": 9536,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "3b0565d3-e731-4bbe-8426-f4cab3b88e74",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Navigation.cy.js",
+      "file": "cypress\\e2e\\Navigation.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "cc57eefb-dcb6-4e54-b3c8-8ad25f91343a",
+          "title": "Navigation Test",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Go() and Reload()",
+              "fullTitle": "Navigation Test Go() and Reload()",
+              "timedOut": null,
+              "duration": 5448,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"https://demo.opencart.com/\");\ncy.title().should('eq', 'Your Store');\ncy.xpath(\"//a[normalize-space()='Cameras']\").click();\ncy.get(\"div[id='content'] h2\").should('have.text', \"Cameras\");\ncy.go('back'); //go back to home\ncy.title().should('eq', 'Your Store');\ncy.go('forward');\ncy.get(\"div[id='content'] h2\").should('have.text', \"Cameras\");\ncy.go(-1); //home\ncy.title().should('eq', 'Your Store');\ncy.go(1);\ncy.get(\"div[id='content'] h2\").should('have.text', \"Cameras\");\ncy.reload();",
+              "err": {},
+              "uuid": "b86a637d-da1e-4de9-a7fd-ca88cdc11a4f",
+              "parentUUID": "cc57eefb-dcb6-4e54-b3c8-8ad25f91343a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "b86a637d-da1e-4de9-a7fd-ca88cdc11a4f"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 5448,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/report"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

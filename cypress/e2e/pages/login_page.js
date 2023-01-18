@@ -6,6 +6,7 @@ export class LoginPage {
 
 
     login(userName, password) {
+        cy.wait(3000)
         cy.get(this.username_textbox).type(userName)
 
         cy.get(this.password_textbox).type(password)

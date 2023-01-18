@@ -1,13 +1,13 @@
 {
   "stats": {
-    "suites": 0,
+    "suites": 1,
     "tests": 1,
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2023-01-16T06:05:59.509Z",
-    "end": "2023-01-16T06:06:11.611Z",
-    "duration": 12102,
+    "start": "2023-01-18T13:37:19.382Z",
+    "end": "2023-01-18T13:37:20.592Z",
+    "duration": 1210,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,42 +18,61 @@
   },
   "results": [
     {
-      "uuid": "9daedb70-49ea-4f3e-b30c-d5233dffc35f",
+      "uuid": "5e67f7eb-bde3-4684-bbfd-0794d8e529a7",
       "title": "",
-      "fullFile": "cypress\\e2e\\XpathSelector.cy.js",
-      "file": "cypress\\e2e\\XpathSelector.cy.js",
+      "fullFile": "cypress\\e2e\\HooksAndTags.cy.js",
+      "file": "cypress\\e2e\\HooksAndTags.cy.js",
       "beforeHooks": [],
       "afterHooks": [],
-      "tests": [
+      "tests": [],
+      "suites": [
         {
-          "title": "Login",
-          "fullTitle": "Login",
-          "timedOut": null,
-          "duration": 8119,
-          "state": "passed",
-          "speed": "medium",
-          "pass": true,
-          "fail": false,
-          "pending": false,
-          "context": null,
-          "code": "cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');\ncy.xpath(\"//input[@placeholder='Username']\").type(\"Admin\");\ncy.xpath(\"//input[@name='password']\").type(\"admin123\");\ncy.xpath(\"//button[@type='submit']\").click();",
-          "err": {},
-          "uuid": "25044b50-808a-4b53-bbb8-a28231c8a528",
-          "parentUUID": "9daedb70-49ea-4f3e-b30c-d5233dffc35f",
-          "isHook": false,
-          "skipped": false
+          "uuid": "7e644bf3-d620-49b2-8898-6dd89c59b3ae",
+          "title": "MyTestSuite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Listing Products",
+              "fullTitle": "MyTestSuite Listing Products",
+              "timedOut": null,
+              "duration": 1096,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.log(\"******** Listing products ********\");",
+              "err": {},
+              "uuid": "ab311a98-7d09-45e0-b1c1-382e725fe6d8",
+              "parentUUID": "7e644bf3-d620-49b2-8898-6dd89c59b3ae",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "ab311a98-7d09-45e0-b1c1-382e725fe6d8"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1096,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
         }
       ],
-      "suites": [],
-      "passes": [
-        "25044b50-808a-4b53-bbb8-a28231c8a528"
-      ],
+      "passes": [],
       "failures": [],
       "pending": [],
       "skipped": [],
-      "duration": 8119,
+      "duration": 0,
       "root": true,
-      "rootEmpty": false,
+      "rootEmpty": true,
       "_timeout": 2000
     }
   ],
